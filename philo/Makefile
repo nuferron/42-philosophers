@@ -6,7 +6,7 @@
 #    By: nuferron <nuferron@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/21 18:47:09 by nuferron          #+#    #+#              #
-#    Updated: 2023/09/21 23:03:30 by nuferron         ###   ########.fr        #
+#    Updated: 2023/09/22 15:26:22 by nuferron         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CYAN = \033[1;36m
 WHITE = \033[1;37m
 RESET = \033[0m
 
-SRCS = philo.c check_errors.c
+SRCS = philo.c check_errors.c time.c
 
 SRCDIR = src/
 OBJDIR = obj/
