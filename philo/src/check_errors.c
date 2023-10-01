@@ -24,3 +24,38 @@ int	ft_atoi(char *str)
 	}
 	return (nb * neg);
 }
+
+int	getting_input(int argc, char **argv)
+{
+	int		i;
+
+	i = 1;
+	while (i < argc)
+	{
+		if (is_valid(argv[i]) == 0)
+			i++;
+		else
+			return (-1);
+	}
+	return (0);
+}
+
+int	is_valid(char *str)
+{
+	while (*str)
+	{
+		if (*str >= '0' && *str <= '9')
+			str++;
+		else
+			return (-1);
+	}
+	return (0);
+}
+
+int	ft_errors(t_data *data, char *error)
+{
+	if (data->philo)
+		free(data->philo);
+	printf("%s\n", error);
+	return (-1);
+}
