@@ -56,6 +56,6 @@ int	ft_errors(t_data *data, char *error)
 {
 	if (data->philo)
 		free(data->philo);
-	printf("%s\n", error);
+	printf("%s", error);
 	return (-1);
 }

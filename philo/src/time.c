@@ -6,7 +6,7 @@
 /*   By: nuferron <nuferron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 15:10:01 by nuferron          #+#    #+#             */
-/*   Updated: 2023/09/30 23:20:00 by nuferron         ###   ########.fr       */
+/*   Updated: 2023/10/07 22:58:21 by nuferron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,18 @@ long long int	get_time(long long int flag)
 	if (flag == 0)
 		return (time.tv_sec * 1000 + time.tv_usec / 1000);
 	return ((time.tv_sec * 1000 + time.tv_usec / 1000) - flag);
+}
+
+void	ft_usleep(int wait)
+{
+	long long int	start;
+
+	start = get_time(0);
+	while(1)
+	{
+		if (get_time(start) > (long long int) wait)
+		{
+			break ;
+		}
+	}
 }
