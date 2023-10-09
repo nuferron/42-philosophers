@@ -6,7 +6,7 @@
 /*   By: nuferron <nuferron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 15:10:01 by nuferron          #+#    #+#             */
-/*   Updated: 2023/10/07 22:58:21 by nuferron         ###   ########.fr       */
+/*   Updated: 2023/10/08 22:49:44 by nuferron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,12 @@ void	ft_usleep(int wait)
 	long long int	start;
 
 	start = get_time(0);
-	while(1)
+	while (1)
 	{
-		if (get_time(start) > (long long int) wait)
+		if (get_time(start) >= (long long int) wait)
 		{
 			break ;
 		}
+		usleep(100);
 	}
 }

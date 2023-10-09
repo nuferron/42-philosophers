@@ -6,7 +6,7 @@
 #    By: nuferron <nuferron@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/21 18:47:09 by nuferron          #+#    #+#              #
-#    Updated: 2023/09/22 15:26:22 by nuferron         ###   ########.fr        #
+#    Updated: 2023/10/08 23:28:29 by nuferron         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,12 +19,12 @@ CYAN = \033[1;36m
 WHITE = \033[1;37m
 RESET = \033[0m
 
-SRCS = philo.c check_errors.c time.c
+SRCS = philo.c check_errors.c time.c initialize.c actions.c
 
 SRCDIR = src/
 OBJDIR = obj/
 HEADER = philo.h
-CFLAGS = -Wall -Werror -Wextra #-fsanitize=thread -g
+CFLAGS = -Wall -Werror -Wextra -fsanitize=thread -g
 OBJS = $(addprefix $(OBJDIR),$(SRCS:.c=.o))
 NAME = philo
 COLUMNS = $(shell tput cols)
