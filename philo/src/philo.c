@@ -6,7 +6,7 @@
 /*   By: nuferron <nuferron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 22:58:55 by nuferron          #+#    #+#             */
-/*   Updated: 2023/10/14 20:16:33 by nuferron         ###   ########.fr       */
+/*   Updated: 2023/10/14 21:10:56 by nuferron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,8 @@ int	main(int argc, char **argv)
 
 	if (argc < 5 || argc >= 7)
 		return (ft_errors(&data, ARGS, 1));
+	if (ft_atol(argv[1]) == 0)
+		return (ft_errors(&data, PHILO, 1));
 	if (getting_input(argc, argv) == -1)
 		return (ft_errors(&data, INPUT, 1));
 	initializing_data(argc, argv, &data);
