@@ -6,7 +6,7 @@
 #    By: nuferron <nuferron@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/21 18:47:09 by nuferron          #+#    #+#              #
-#    Updated: 2023/10/08 23:28:29 by nuferron         ###   ########.fr        #
+#    Updated: 2023/10/14 17:05:01 by nuferron         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRCS = philo.c check_errors.c time.c initialize.c actions.c
 SRCDIR = src/
 OBJDIR = obj/
 HEADER = philo.h
-CFLAGS = -Wall -Werror -Wextra -fsanitize=thread -g
+CFLAGS = -Wall -Werror -Wextra #-fsanitize=thread -g
 OBJS = $(addprefix $(OBJDIR),$(SRCS:.c=.o))
 NAME = philo
 COLUMNS = $(shell tput cols)
