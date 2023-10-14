@@ -6,7 +6,7 @@
 /*   By: nuferron <nuferron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 22:58:55 by nuferron          #+#    #+#             */
-/*   Updated: 2023/10/14 16:59:24 by nuferron         ###   ########.fr       */
+/*   Updated: 2023/10/14 20:16:33 by nuferron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,5 +115,6 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	ft_threads(&data);
+	free(data.philo);
 	return (0);
 }
