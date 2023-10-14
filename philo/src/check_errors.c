@@ -6,7 +6,7 @@
 /*   By: nuferron <nuferron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 22:49:52 by nuferron          #+#    #+#             */
-/*   Updated: 2023/10/14 20:16:48 by nuferron         ###   ########.fr       */
+/*   Updated: 2023/10/14 21:06:07 by nuferron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int	getting_input(int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
+		if (!is_valid(argv[i]))
+			return (-1);
 		if (ft_atol(argv[i]) < 0 || ft_atol(argv[i]) > INT_MAX)
 			return (-1);
 		i++;
@@ -56,9 +58,9 @@ int	is_valid(char *str)
 		if (*str >= '0' && *str <= '9')
 			str++;
 		else
-			return (-1);
+			return (0);
 	}
-	return (0);
+	return (1);
 }
 
 int	ft_errors(t_data *data, char *error, int flag)
