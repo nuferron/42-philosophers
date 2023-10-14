@@ -6,7 +6,7 @@
 /*   By: nuferron <nuferron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 22:58:55 by nuferron          #+#    #+#             */
-/*   Updated: 2023/10/08 23:20:43 by nuferron         ###   ########.fr       */
+/*   Updated: 2023/10/14 16:59:24 by nuferron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,13 @@ int	print_msg(t_philo *philo, char *str, int event)
 			printf(YELLOW);
 		if (event == DIED)
 			printf(WHITE);
-		if (!philo->data->dead)
+		if (!pthread_mutex_lock(&philo->data->mutex_dead) && !philo->data->dead)
 			printf("%lld ms\t%d\t%s", get_time(philo->data->time), \
 					philo->name, str);
 		printf(RESET);
+		pthread_mutex_unlock(&philo->data->mutex_dead);
+		pthread_mutex_unlock(&philo->data->print);
 	}
-	pthread_mutex_unlock(&philo->data->print);
 	return (1);
 }
 
