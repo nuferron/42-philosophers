@@ -6,7 +6,7 @@
 /*   By: nuferron <nuferron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 23:20:56 by nuferron          #+#    #+#             */
-/*   Updated: 2023/10/08 23:34:11 by nuferron         ###   ########.fr       */
+/*   Updated: 2023/10/14 17:09:52 by nuferron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	still_there(t_data *data, int i)
 	if (!pthread_mutex_lock(&data->mutex_meals))
 	{
 		if (!pthread_mutex_lock(&data->philo[i].mutex_count)
-				&& data->philo[i].meal_count == data->t_meals)
+			&& data->philo[i].meal_count == data->t_meals)
 		{
 			pthread_mutex_unlock(&data->mutex_meals);
 			pthread_mutex_unlock(&data->philo[i].mutex_count);
@@ -62,8 +62,6 @@ int	still_there(t_data *data, int i)
 	return (1);
 }
 
-
-//te una linia de mes
 void	stiff_philo(t_data *data)
 {
 	int	i;
@@ -74,8 +72,6 @@ void	stiff_philo(t_data *data)
 		i = 0;
 		while (i < data->total)
 		{
-			if (data->t_meals != -1 && !still_there(data, i++))
-				continue ;
 			if (data->t_meals != -1 && still_there(data, i) == -1)
 				return ;
 			if (pthread_mutex_lock(&data->philo[i].mutex_last) == 0)
